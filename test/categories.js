@@ -867,10 +867,14 @@ describe('Categories', () => {
                     async.apply(groups.destroy, 'testGroup'),
                     async.apply(groups.destroy, 'testGroup2'),
                 ], done);
+                console.log('1');
             });
+            console.log('2');
         });
+        console.log('3');
     });
 
+    console.log('2');
 
     describe('getTopicIds', () => {
         const plugins = require('../src/plugins');
@@ -878,6 +882,7 @@ describe('Categories', () => {
             function method(data, callback) {
                 data.tids = [1, 2, 3];
                 callback(null, data);
+                console.log('topics');
             }
 
             plugins.hooks.register('my-test-plugin', {
