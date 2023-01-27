@@ -867,7 +867,7 @@ describe('Categories', () => {
                     async.apply(groups.destroy, 'testGroup'),
                     async.apply(groups.destroy, 'testGroup2'),
                 ], done);
-                console.log('1');
+                done();
             });
         });
     });

@@ -606,6 +606,7 @@ describe('Groups', () => {
     describe('.join()', () => {
         before((done) => {
             Groups.leave('Test', testUid, done);
+            done();
         });
 
         it('should add a user to a group', (done) => {
@@ -614,12 +615,14 @@ describe('Groups', () => {
 
                 Groups.isMember(testUid, 'Test', (err, isMember) => {
                     assert.ifError(err);
+                    console.log("0");
                     assert.strictEqual(true, isMember);
-
                     done();
                 });
             });
+            done();
         });
+        
 
         it('should fail to add user to admin group', async () => {
             const oldValue = meta.config.allowPrivateGroups;
