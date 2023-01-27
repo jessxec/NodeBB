@@ -869,12 +869,8 @@ describe('Categories', () => {
                 ], done);
                 console.log('1');
             });
-            console.log('2');
         });
-        console.log('3');
     });
-
-    console.log('2');
 
     describe('getTopicIds', () => {
         const plugins = require('../src/plugins');
